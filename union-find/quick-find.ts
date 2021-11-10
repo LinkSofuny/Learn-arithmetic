@@ -36,7 +36,6 @@ class __uF {
     const qId = this.id[q]
 
     if (pId === qId) return
-
     for (let i = 0; i < this.id.length; i++) {
       if (this.id[i] === pId) this.id[i] = qId
     }

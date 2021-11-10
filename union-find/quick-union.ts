@@ -4,6 +4,7 @@
  * 3. find 找到目标触电的标识符
  * 4. connected 如果 p 和  q 存在于同一个分量中则返回 true
  * 5. count 连通分量的数量 
+ * 加权算法的好处在于, 每次都是将小树归并到大的树, 并且每次归并都是归并与根节点, 这能极大的减少访问树的成本
 */
 class UF {
   private count: number;
