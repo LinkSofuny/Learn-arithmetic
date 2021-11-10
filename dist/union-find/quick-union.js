@@ -12,8 +12,11 @@ class UF {
     init(N) {
         this.count = N;
         this.id = [];
-        for (let i = 0; i < N; i++)
+        this.sz = [];
+        for (let i = 0; i < N; i++) {
             this.id[i] = i;
+            this.sz[i] = 1;
+        }
     }
     getId() {
         return this.id;
@@ -28,11 +31,19 @@ class UF {
         return this.find(p) === this.find(q);
     }
     union(p, q) {
-        let pRoot = this.find(p);
-        let qRoot = this.find(q);
-        if (pRoot === qRoot)
+        debugger;
+        let i = this.find(p);
+        let j = this.find(q);
+        if (i === j)
             return;
-        this.id[pRoot] = qRoot;
+        if (this.sz[i] < this.sz[j]) {
+            this.id[i] = j;
+            this.sz[j] += this.sz[i];
+        }
+        else {
+            this.id[j] = i;
+            this.sz[i] += this.sz[j];
+        }
         this.count--;
     }
 }

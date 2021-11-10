@@ -8,10 +8,15 @@
 class UF {
   private count: number;
   private id: number[]
+  private sz: number[]
   private init (N: number) {
     this.count = N;
     this.id = [];
-    for (let i = 0; i < N; i++) this.id[i] = i
+    this.sz = []
+    for (let i = 0; i < N; i++) {
+      this.id[i] = i
+      this.sz[i] = 1
+    }
   }
   constructor (N: number) {
     this.init(N)
@@ -31,13 +36,14 @@ class UF {
   }
 
   public union (p: number, q: number) {
-    let pRoot = this.find(p)
-    let qRoot = this.find(q)
+    debugger
+    let i = this.find(p)  
+    let j = this.find(q)
 
-    if(pRoot === qRoot) return
+    if(i === j) return
     
-    this.id[pRoot] = qRoot
-
+    if ( this.sz[i] < this.sz[j]) { this.id[i] = j; this.sz[j] += this.sz[i] }
+    else                          { this.id[j] = i; this.sz[i] += this.sz[j] }
     this.count--;
   }
 }
