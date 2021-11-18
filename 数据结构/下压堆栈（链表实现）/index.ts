@@ -30,12 +30,12 @@ class Stack<T> {
   }
 }
 
-const S = new Stack()
-S.push('first')
-S.push('second')
-console.log(S)
-console.log('弹出', S.pop())
-console.log(S)
-S.push('three')
-console.log(S)
+// const S = new Stack()
+// S.push('first')
+// S.push('second')
+// console.log(S)
+// console.log('弹出', S.pop())
+// console.log(S)
+// S.push('three')
+// console.log(S)
 

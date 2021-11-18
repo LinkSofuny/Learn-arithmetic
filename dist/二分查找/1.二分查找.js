@@ -14,6 +14,6 @@ class BinarySearch {
         return -1;
     }
 }
-let arr = [1, 2, 3, 4, 5, 6];
-const rank = (new BinarySearch()).rank;
-console.log(rank(6, arr));
+// let arr: number[] = [1,2,3,4,5,6]
+// const rank = (new BinarySearch()).rank
+// console.log(rank(6, arr))

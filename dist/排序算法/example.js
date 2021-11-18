@@ -9,8 +9,12 @@ class Example {
         arr[i] = arr[j];
         arr[j] = t;
     }
-    show(arr) { for (let i = 0; i < arr.length; i++)
-        console.log(arr[i] + ''); }
-    isSorted(arr) { for (let i = 0; i < arr.length; i++)
-        return !!this.less(arr[i], arr[i - 1]); }
+    show(arr) {
+        for (let i = 0; i < arr.length; i++)
+            console.log(arr[i] + '');
+    }
+    isSorted(arr) {
+        for (let i = 0; i < arr.length; i++)
+            return !!this.less(arr[i], arr[i - 1]);
+    }
 }

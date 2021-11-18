@@ -1,17 +1,16 @@
-class _Selection {
+class Insertion {
     sort(arr) {
         //....
         const N = arr.length;
         for (let i = 0; i < N; i++) {
-            let min = i;
-            for (let j = i + 1; j < N; j++) {
-                if (this.less(arr[min], arr[j]) > 0)
-                    min = j;
+            // 插入排序
+            // 1. 由后往前, 对相邻两位进行比较, 如不同则交换位置
+            for (let j = i; j > 0 && this.less(arr[j], arr[j - 1]); j--) {
+                this.exch(arr, j, j - 1);
             }
-            this.exch(arr, i, min);
         }
     }
-    less(A, B) { return A - B; /* 这里可能需要做区分 */ }
+    less(A, B) { return A - B < 0; /* 这里可能需要做区分 */ }
     // 交换
     exch(arr, i, j) {
         const t = arr[i];
@@ -27,8 +26,8 @@ class _Selection {
             return !!this.less(arr[i], arr[i - 1]);
     }
 }
-// let arr = [1, 5, 6, 7, 8, 9, 10]
-// const S = new _Selection()
-// debugger
-// S.sort(arr)
-// console.log(arr);
+let arr = [10, 2, 3, 5, 7, 1];
+const S = new Insertion();
+debugger;
+S.sort(arr);
+console.log(arr);
