@@ -12,9 +12,13 @@ var MergeBU = /** @class */ (function () {
         // sz 是一个数组的长度单位
         // 每次遍历数组, 都应该基于 sz 来作为跨度, 每次 merge
         // 都需要用到两个数组 所以 应该以 sz + sz 做为 每次循环的跨度
+        // 这个循环是设置 sz 的大小
         for (var sz = 1; sz < N; sz = sz + sz) {
+            // 而sz是最小数组的大小, 所以lo仍然要求以两个最小数组为跨度
+            // 这里可以理解为对数组的首次分割
             for (var lo = 0; lo < N - sz; lo += sz + sz) {
                 // 这里的lo指的是 每个子数组的索引
+                // merge内部对数组做了多一级分割
                 this.merge(a, lo, lo + sz - 1, Math.min(lo + sz + sz - 1, N - 1));
             }
         }
