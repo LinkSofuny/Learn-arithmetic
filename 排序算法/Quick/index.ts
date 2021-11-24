@@ -16,7 +16,7 @@ class Quick<T> {
         */
         if (hi <= lo) return
 
-        let j = this.partition(arr, lo, arr.length - 1)
+        let j = this.partition(arr, lo, hi)
         this.sort(arr, lo, j - 1)
         this.sort(arr, j + 1, hi)
         
@@ -49,16 +49,6 @@ class Quick<T> {
         const t = arr[i]
         arr[i] = arr[j]
         arr[j] = t
-    }
-
-    public show(arr: T[]) { 
-        for (let i = 0; i < arr.length; i++) 
-            console.log(arr[i] + '') 
-    }
-
-    public isSorted(arr: T[]) { 
-        for (let i = 0; i < arr.length; i++)  
-            return !!this.less(arr[i], arr[i - 1]) 
     }
 }
 
