@@ -28,6 +28,5 @@ function sortArray(arr: number[]) {
     exch(arr, 0, N--);
     sink(arr, 0, N);
   }
-
   return arr;
 }
