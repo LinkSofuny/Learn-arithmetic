@@ -19,7 +19,7 @@ function sink(arr, k, N) {
         k = j;
     }
 }
-var arr = [-2, 3, -5];
+var arr = [10, 5, 7, 1, 2, 3, 4];
 /**
  * 堆排序
  * 1. 将数组排成 堆有序的二叉树
@@ -36,7 +36,6 @@ function sort(arr) {
     for (var k = Math.floor(N / 2); k >= 0; k--) {
         sink(arr, k, N);
     }
-    console.log(arr);
     while (N >= 1) {
         exch(arr, 0, N--);
         sink(arr, 0, N);
