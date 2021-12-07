@@ -19,9 +19,12 @@ function sortArray (nums: number[]) {
     for(let i = Math.floor(N / 2); i >= 0; i--) {
         sink(nums, i, N) // 堆有序化
     } 
+    console.log(nums)
     while (N > 0) {
         exch(nums, 0, N--)
         sink(nums, 0, N)
     }
     return nums
 }
+let arr = [3, 2, 1, 5]
+sortArray(arr)
