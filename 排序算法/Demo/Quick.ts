@@ -13,19 +13,19 @@ function random (arr: number[]) {
     }
     return arr
 }
-
+[1, 2, 3, 4 ,5]
 function partition (nums: number[], lo: number, hi: number) {
     /**
      * 1. 选一个比较值
      * 2. 左右指针都与选定值比较, 如果符合条件, 左右指针向前推进
      * 3. 最后 将 j 值与比较值对调, 返回j
      */
-    let i: number = lo
-    let j: number = hi + 1// 这里为什么要 + 1 ?🤔
+    let i: number = lo                              // 0
+    let j: number = hi + 1// 这里为什么要 + 1 ?🤔     // 5
     const v: number = nums[lo]
     while(true) {
         /**
-         * 1. 为什么是 ++i 而不是 i++ ?? 🤔
+         * 1. 为什么是 ++i 而不是 i++ ?? 🤔 因为0号位我们已经用来当做切分元素了
          */
         while (less(nums[++i], v)) if (i === hi) break;
         while (less(v, nums[--j])) if (j === lo) break;
