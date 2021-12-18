@@ -13,7 +13,6 @@ function random (arr: number[]) {
     }
     return arr
 }
-[1, 2, 3, 4 ,5]
 function partition (nums: number[], lo: number, hi: number) {
     /**
      * 1. 选一个比较值
