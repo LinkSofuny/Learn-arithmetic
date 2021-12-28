@@ -3,6 +3,7 @@
  * @return {number[]}
  * 我的解法有什么问题?
  *  1. 从计算的角度思考了问题, 也就是把末位当成了 传统计算的 个位数, 然后安位计算, 这样效率不高
+ *  2. 需要提高概括问题的能力
  */
 //  var plusOne = function(digits) {
 //     if (!digits.length) return
