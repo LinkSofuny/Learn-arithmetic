@@ -18,14 +18,20 @@
 };
 
 // 非字符串法
-
+/**
+ * 1. 想办法拿到后半段数组的倒数
+ * 2. 怎么判断当前到了一半了?
+ * 3. 奇数还是偶数
+ * @param {}} x 
+ * @returns 
+ */
 var isPalindrome = function(x) {
     if (x < 0 || (x %+ 10 !== 0 && x !== 0)) return false
     
-    const a = 12321
-    const b = a % 10
-    const c = a / 10
-    const d = b * 10 + b // 倒数
+    // const a = 12321
+    // const b = a % 10
+    // const c = a / 10
+    // const d = b * 10 + b // 倒数
 
     let revertNumber = 0
     while(x > revertNumber) {
