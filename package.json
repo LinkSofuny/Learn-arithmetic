@@ -1,0 +1,21 @@
+{
+  "name": "learn-arithmetic",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "changelog": "conventional-changelog -p angular -i README.md -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LinkSofuny/Learn-arithmetic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LinkSofuny/Learn-arithmetic/issues"
+  },
+  "homepage": "https://github.com/LinkSofuny/Learn-arithmetic#readme"
+}
