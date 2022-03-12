@@ -3,26 +3,15 @@
  * @return {number}
  */
  var climbStairs = function(n) {
-    /**
-     *  有哪几种方法让它最终余 0
-     *  边界情况: 
-     *      1. 为 0 返回 0 
-     *  否则:
-     *      1. 余 2
-     *          0 => count++
-     *      否则 余 1
-     *          0 => count++
-     *      
-     */
-    if (!n) return 0
-    if (n === 1) return 1
-    let count = 1
-    if (n % 2 === 0) count++
-    else {
-        // 证明有 c 个 2 和 1 个 1
-        count += ( n >> 1 ) + 1
+    let p = 0, q = 0, r = 1
+    // 这道题最难的地方在于找到转移方程 f(x) = f(x - 2) + f(x - 1)    
+    // 其次就是滚动数组的的思想, 不过毕竟第一次接触, 下次就知道怎滚动了
+    for (let i = 1; i <= n; i++) {
+        // f(x) = f(x - 1) + f (x - 2)
+        p = q
+        q = r
+        r = q + p
     }
-    return count
-};
 
-console.log(climbStairs(4));
+    return r
+};
